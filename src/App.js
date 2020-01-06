@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"; // react는 당신이 거기에 쓰는 모든 요소를 생성한다는 것.
+
+function Food({favourite}) {
+  return <h1> I Like {favourite} </h1>;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1> Hello!!! </h1>{" "}
+      <Food favourite="kimchi"/>
+      <Food favourite="ramen"/>
+      <Food favourite="samgiopsal"/>
+      <Food favourite="chukumi"/>
     </div>
   );
 }
