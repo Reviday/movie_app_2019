@@ -1,6 +1,7 @@
 import React from "react"; // react는 당신이 거기에 쓰는 모든 요소를 생성한다는 것.
 import axios from "axios";
 import Movie from "./Movie";
+import "./App.css";
 
 class App extends React.Component {
   state = {
@@ -23,22 +24,33 @@ class App extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
     return (
-      <div>
+      <section class="container">
         {isLoading
-          ? "Loading..."
-          : movies.map(movie => {
-              return (
-                <Movie
-                  key={movie.id}
-                  id={movie.id}
-                  year={movie.year}
-                  title={movie.title}
-                  summary={movie.summary}
-                  poster={movie.medium_cover_image}
-                />
-              );
-            })}
-      </div>
+          ? (
+            <div class="loader">
+              <span class="loader__text">Loading...</span>
+            </div>
+          )
+          : (
+            <div class="movies">
+              {
+                movies.map(movie => {
+                  return (
+                    <Movie
+                      key={movie.id}
+                      id={movie.id}
+                      year={movie.year}
+                      title={movie.title}
+                      summary={movie.summary}
+                      poster={movie.medium_cover_image}
+                    />
+                  );
+                })
+              }
+            </div>
+            )
+        }
+      </section>
     );
   }
 }
