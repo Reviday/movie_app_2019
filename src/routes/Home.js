@@ -7,6 +7,11 @@ class Home extends React.Component {
   state = {
     isLoading: true,
     movies: []
+    /* 
+        현재 state는 내부에 존재하기 때문에, 페이지가 다시 home으로 가면 state를 다시 받아오게 된다.
+        근데, 이 값을 redux는 다른 곳에 state를 저장하기 때문에 페이지가 바뀌어도 값은 유지된다.
+        이 문제점은 redux를 배우고 난 후 내가 고쳐보도록 하자!
+     */
   };
   getMovies = async () => {
     const {
