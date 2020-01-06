@@ -11,4 +11,13 @@ function Navigation() {
     );
 }
 
+/*
+    <Link to={{
+        pathname : "/about",
+        state : {
+            fromNavigation: true
+        }
+    }}>About</Link> 
+*/
+
 export default Navigation;
