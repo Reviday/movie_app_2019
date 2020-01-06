@@ -1,6 +1,26 @@
 import React from "react"; // react는 당신이 거기에 쓰는 모든 요소를 생성한다는 것.
 import PropTypes from "prop-types";
 
+class App extends React.Component { 
+  state = {
+    isLoading : true,
+    movies: []
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({isLoading: false, book: true});
+    }, 6000);
+  }
+  render() {
+    const { isLoading } = this.state;
+  return <div>{isLoading ? "Loading..." : "We are ready"}</div>
+  }
+}
+
+export default App;
+
+
+/*
 class App extends React.Component { // react는 자동적으로 너의 class compnent의 render method를 실행해! 자동으로!
   constructor(props) {
     super(props);
@@ -56,5 +76,4 @@ class App extends React.Component { // react는 자동적으로 너의 class com
   //        - componentWillUnmount() : component가 떠날 때 호출된다.
 
 }
-
-export default App;
+*/
